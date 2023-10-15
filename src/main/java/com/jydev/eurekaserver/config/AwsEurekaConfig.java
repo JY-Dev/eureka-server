@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Configuration
 public class AwsEurekaConfig {
     @Bean
@@ -15,6 +18,9 @@ public class AwsEurekaConfig {
         EurekaInstanceConfigBean bean = new EurekaInstanceConfigBean(inetUtils);
         AmazonInfo info = AmazonInfo.Builder.newBuilder()
                 .autoBuild("eureka");
+        Map<String, String> metadataMap = new HashMap<>();
+        metadataMap.put("region", "ap-northeast-1");
+        bean.setMetadataMap(metadataMap);
         bean.setDataCenterInfo(info);
         return bean;
     }
