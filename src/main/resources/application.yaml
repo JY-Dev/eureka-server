@@ -6,4 +6,4 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    region: ${discovery.region}
+    region: ap-northeast-1
