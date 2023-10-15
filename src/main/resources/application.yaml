@@ -6,4 +6,7 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    region: ap-northeast-1
+    region: ${eureka.region}
+spring:
+  profiles:
+    active: dev
